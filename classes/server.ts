@@ -30,10 +30,13 @@ export default  class Server {
         console.log('Escuchando sockets');
 
         this.io.on('connection', cliente => {
-            console.log('Se conectó un wey');
             
+            console.log('Se conectó un wey', cliente.id);
+            
+            socket.conectarCliente(cliente);
             socket.desconectar(cliente);
             socket.mensaje(cliente, this.io);
+            socket.configurarUsuario(cliente, this.io);
         });
     }
 
