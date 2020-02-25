@@ -33,10 +33,11 @@ export default  class Server {
             
             console.log('Se conectó un wey', cliente.id);
             
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente, this.io);
             socket.desconectar(cliente);
             socket.mensaje(cliente, this.io);
             socket.configurarUsuario(cliente, this.io);
+            socket.obtenerUsuarios(cliente, this.io);
         });
     }
 

@@ -26,7 +26,7 @@ export class UsuariosLista {
     }
 
     public getLista () {
-        return this.lista;
+        return this.lista.filter( usuario => usuario.nombre !== 'no-name');
     }
 
     public getUsuario ( id: string ) {
